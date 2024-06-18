@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart%20';
 import 'package:provider/provider.dart';
+import 'Provider.dart';
 
-import '../../Day1/Wallpaper/ApiWallPaper/Provider.dart';
+
 
 // Provider -> Logic
 // Api -> helper class-> Api servoce
@@ -15,24 +17,47 @@ class ApiWallpaper extends StatelessWidget {
     WallProvider wallProviderFalse =
         Provider.of<WallProvider>(context, listen: false);
 
+    TextEditingController searchController = TextEditingController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('wallpaper'),
+        title: Text('Wallpaper'),
       ),
-
-      // body:
-      body: (wallProviderTrue.isLoading)
-          ? Center(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: searchController,
+              decoration: InputDecoration(
+                labelText: 'Search',
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    wallProviderFalse.fetchData(searchController.text);
+                  },
+                ),
+              ),
+              onSubmitted: (value) {
+                wallProviderFalse.fetchData(value);
+              },
+            ),
+          ),
+          Expanded(
+            child: (wallProviderTrue.isLoading)
+                ? Center(
               child: CircularProgressIndicator(),
             )
-          : GridView.builder(
-              itemCount: 10,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                : GridView.builder(
+              itemCount: wallProviderTrue.data['hits']?.length ?? 0,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemBuilder: (context, index) => Card(
-                    child: Image.network(
-                        wallProviderTrue.data['hits'][index]['largeImageURL']),
-                  )),
+                child: Image.network(
+                    wallProviderTrue.data['hits'][index]['largeImageURL']),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

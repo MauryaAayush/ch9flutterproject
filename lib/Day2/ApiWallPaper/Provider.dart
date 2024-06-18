@@ -1,31 +1,28 @@
 import 'dart:convert';
-
 import 'package:flutter/foundation.dart';
 
-import '../../Day1/Wallpaper/ApiWallPaper/helper/apiservice.dart';
+import 'helper/apiservice.dart';
+
 
 
 class WallProvider extends ChangeNotifier{
 
   Map data = {};
   bool isLoading = false;
+  Apiservice apiservice = Apiservice();
 
-  Future<void> fetchData()
+  Future<void> fetchData(String query)
   async {
     isLoading = true;
     notifyListeners();
 
     Apiservice apiservice = Apiservice();
-    String? json = await apiservice.apiCalling();
+    String? json = await apiservice.apiCalling(query);
     data = jsonDecode(json!);
 
     isLoading = false;
     notifyListeners();
   }
 
-  WallProvider()
-  {
-    fetchData();
-  }
 
 }
