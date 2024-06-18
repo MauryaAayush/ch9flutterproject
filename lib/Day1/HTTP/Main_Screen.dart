@@ -15,11 +15,19 @@ class HttPScreen extends StatelessWidget {
         title:Text('API calling'),
       ),
 
-      body: ListView.builder(
-        itemCount: ApiServices.l1.length,
-        itemBuilder: (context, index) => ListTile(
-        title: Text(ApiServices.l1[index]['body']),
-      ),)
+      body:
+
+      Center(
+        child: ListView.builder(
+          itemCount: ApiServices.l1.length,
+          itemBuilder: (context, index) => ListTile(
+            titleTextStyle: TextStyle(color: Colors.black),
+          title: Text(ApiServices.l1[index]['body']),
+            leading: Text(ApiServices.l1[index]['id'].toString()),
+            subtitle:  Text(ApiServices.l1[index]['name']),
+
+        ),),
+      )
     );
   }
 }
