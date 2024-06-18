@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'Day1/HTTP/Main_Screen.dart';
+import 'Day1/Wallpaper/Provider/WallPaper_Provider.dart';
+import 'Day1/Wallpaper/wallPaper_Screen.dart';
 
 void main() {
   ApiServices apiServices = ApiServices();
-  runApp(const MyApp());
+  runApp(
+
+      MultiProvider(providers: [
+        ChangeNotifierProvider(create: (context) => WallpaperProvider(),)
+      ],
+          child: const MyApp()
+      )
+
+      );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: HttPScreen(),
+      home: WallpaperScreen(),
     );
   }
 }
