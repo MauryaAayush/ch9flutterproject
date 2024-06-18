@@ -12,8 +12,8 @@ class ApiWallpaper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WallProvider wallProviderTrue = Provider.of<WallProvider>(context);
-    WallProvider wallProviderFalse =
-        Provider.of<WallProvider>(context, listen: false);
+    // WallProvider wallProviderFalse =
+    //     Provider.of<WallProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
