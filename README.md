@@ -206,6 +206,30 @@ In the context of software development, a *model* represents the data structure 
    - Example: API calls model
 
 
+##
+<h3 align="center"><i>WallPaper Set</i></h3>
+
+## Dependencies:
+* http: ^1.2.1
+* path_provider: ^2.0.13
+* async_wallpaper: ^2.0.3
+* file_picker: ^5.0.1
+* provider: ^6.1.2
+
+
+##
+<div align="center">
+ 
+<img src="https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/33a5b97b-b54d-4261-bcc2-32ecc104fd25" height=500px hspace=20>
+
+ <video src = "https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/38a547b3-7dd1-4cd7-967e-65f38351e0fe">
+</div>
+
+###
+<div align="center">
+<a href="https://github.com/MauryaAayush/ch9flutterproject/tree/master/lib/Day1">-> 👉📚 See The Code 📚 👈<-</a>
+</div>
+
 
 
 
