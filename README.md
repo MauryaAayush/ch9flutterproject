@@ -115,7 +115,7 @@ In the context of software development, a *model* represents the data structure 
 
 ### Flowchart 🔄
 
-plaintext
+```plaintext
 +--------------------+
 |      Client        |
 +--------------------+
@@ -185,7 +185,7 @@ plaintext
 |    and processes   |
 |    the response    |
 +--------------------+
-
+```
 
 ### Detailed Steps in the Flowchart
 
