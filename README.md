@@ -204,3 +204,24 @@ plaintext
 4. *Model:*
    - API interacts with the model.
    - Example: API calls model
+
+
+
+
+
+##
+<h3 align="center"><i>PixaBay Api</i></h3>
+
+## Dependencies:
+* http: ^1.2.1
+* provider: ^6.1.2
+
+##
+<div align="center">
+ 
+<img src="https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/ca43163c-cdd8-4c64-959d-d5951f5e2147" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/318c5187-0c0d-4f15-bb4c-83a147779df2" height=500px hspace=20>
+<img src="https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/2e9ec486-99ab-41cd-bfcd-75e07ffd4068" height=500px hspace=20>
+
+ <video src = "https://github.com/MauryaAayush/ch9flutterproject/assets/143180849/0c3b39b5-0a27-4c9d-9f1f-3981bd7cbc0c">
+</div>
