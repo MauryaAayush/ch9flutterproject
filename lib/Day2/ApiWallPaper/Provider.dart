@@ -9,15 +9,16 @@ class WallProvider extends ChangeNotifier{
 
   Map data = {};
   bool isLoading = false;
-  Apiservice apiservice = Apiservice();
+  // Apiservice apiservice = Apiservice();
 
   Future<void> fetchData(String query)
   async {
     isLoading = true;
     notifyListeners();
 
-    Apiservice apiservice = Apiservice();
-    String? json = await apiservice.apiCalling(query);
+    // Apiservice apiservice = Apiservice();
+    // String? json = await apiservice.apiCalling(query);
+    String? json = await Apiservice.apiservice.apiCalling(query);
     data = jsonDecode(json!);
 
     isLoading = false;

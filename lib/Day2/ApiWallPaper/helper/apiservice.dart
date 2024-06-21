@@ -1,8 +1,15 @@
+import 'package:ch9flutterproject/Day1/HTTP/Main_Screen.dart';
 import 'package:http/http.dart%20';
 import 'package:http/http.dart' as http;
 
 
 class Apiservice {
+
+  // singleton Object : When any class provide same service to entire project.
+  // This is a process of creating singleton object;
+  static final Apiservice apiservice = Apiservice._singleton();
+
+  Apiservice._singleton();
 
   Future<String?> apiCalling(String query)
   async {
