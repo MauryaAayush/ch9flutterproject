@@ -28,7 +28,7 @@ class ApiWallpaper extends StatelessWidget {
             child: TextField(
               controller: searchController,
               decoration: InputDecoration(
-                labelText: 'demo test',
+                labelText: 'Search',
                 suffixIcon: IconButton(
                   icon: Icon(Icons.search),
                   onPressed: () {
